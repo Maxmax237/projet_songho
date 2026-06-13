@@ -1,0 +1,226 @@
+* {
+    user-select: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(145deg, #1a472a 0%, #0e2a1a 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.game-wrapper {
+    max-width: 1100px;
+    width: 100%;
+}
+
+.game-header {
+    background: #2c2b26cc;
+    backdrop-filter: blur(10px);
+    border-radius: 60px;
+    padding: 15px 25px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f9e0a8;
+}
+
+.game-header h1 {
+    margin: 0 0 15px 0;
+    font-size: 1.6rem;
+}
+
+.room-info {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.room-info input {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    border: none;
+    border-radius: 50px;
+    background: #fff3e0;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.room-info button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+#createRoomBtn {
+    background: #4caf50;
+    color: white;
+}
+#joinRoomBtn {
+    background: #ff9800;
+    color: white;
+}
+
+.room-status {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: #ffd966;
+}
+
+.board-container {
+    background: #b87c4f;
+    border-radius: 80px 80px 60px 60px;
+    padding: 25px;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.4);
+}
+
+.board {
+    background: #e7c9a3;
+    border-radius: 50px;
+    padding: 20px;
+}
+
+.player-zone {
+    margin: 10px 0;
+}
+
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0 20px 10px 20px;
+}
+
+.player-name {
+    background: #3a2819;
+    padding: 6px 24px;
+    border-radius: 40px;
+    color: #f2e0b0;
+    font-weight: bold;
+}
+
+.player-score {
+    background: #2e2216;
+    padding: 5px 20px;
+    border-radius: 35px;
+    color: #ffdd99;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.case-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.cell {
+    width: 80px;
+    height: 90px;
+    background: radial-gradient(circle at 35% 30%, #fff5e6, #fae1bd);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: 0 7px 10px rgba(0,0,0,0.25), inset 0 -2px 0 #bc8552;
+    border: 1px solid #f2dcb0;
+}
+
+.cell.highlight {
+    background: radial-gradient(circle at 35% 30%, #ffefc0, #ffdd9e);
+    box-shadow: 0 0 0 3px #f7bc6c;
+    transform: scale(1.02);
+}
+
+.cell.disabled {
+    filter: brightness(0.8) grayscale(0.25);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.seed-count {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #3f2a14;
+}
+
+.seed-icon {
+    font-size: 0.9rem;
+    color: #bc6f2c;
+    letter-spacing: 2px;
+}
+
+.game-info {
+    margin-top: 20px;
+    background: #2a241ccc;
+    backdrop-filter: blur(5px);
+    border-radius: 55px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.turn-indicator {
+    background: #5a3e28;
+    padding: 8px 25px;
+    border-radius: 40px;
+    font-weight: bold;
+    color: #f7efcf;
+}
+
+.message-area {
+    background: #000000aa;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    color: #f7efcf;
+}
+
+.game-info button {
+    background: #dc9e4a;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.game-info button:active {
+    transform: translateY(2px);
+}
+
+.game-info button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 700px) {
+    .cell {
+        width: 55px;
+        height: 65px;
+    }
+    .seed-count {
+        font-size: 1.5rem;
+    }
+    .player-name {
+        font-size: 0.8rem;
+        padding: 4px 12px;
+    }
+}
