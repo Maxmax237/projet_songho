@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Songho - Jeu de semis multijoueur</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game-wrapper">
+    <div class="game-header">
+        <h1>🎲 SONGHO - MULTIJOUEUR</h1>
+        <div class="room-info">
+            <input type="text" id="roomCode" placeholder="Code (6 chiffres)" maxlength="6">
+            <button id="joinRoomBtn">🔗 Rejoindre</button>
+            <button id="createRoomBtn">✨ Créer</button>
+        </div>
+        <div id="roomStatus" class="room-status">Aucune partie</div>
+    </div>
+
+    <div class="board-container">
+        <div class="board">
+            <div class="player-zone player-north">
+                <div class="player-header">
+                    <span class="player-name">JOUEUR 1 (haut)</span>
+                    <span class="player-score" id="score-north">0</span>
+                </div>
+                <div class="case-row" id="north-row"></div>
+            </div>
+            <div class="player-zone player-south">
+                <div class="player-header">
+                    <span class="player-name">JOUEUR 2 (bas)</span>
+                    <span class="player-score" id="score-south">0</span>
+                </div>
+                <div class="case-row" id="south-row"></div>
+            </div>
+        </div>
+
+        <div class="game-info">
+            <div class="turn-indicator" id="turn-text">En attente...</div>
+            <div class="message-area" id="game-message">Créez ou rejoignez une partie</div>
+            <button id="resetBtn" disabled>🔄 Nouvelle partie</button>
+            <button id="quitBtn" disabled>🚪 Quitter</button>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
